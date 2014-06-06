@@ -60,4 +60,4 @@ class Poll(Document):
             ('pub_date', '+question')
         ]
     }
-'''
+''' 
