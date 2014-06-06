@@ -10,16 +10,16 @@ Purpose of Pop'Tweets :
 RealTime webapp to show and analyze stream of geocoded datas.
 
 Pop'Tweets aims :
-    - to be simple to use;
-    - to select a topic you are interested in (concerts, friends, protests...);
-    - to see the tweets appearing directly on a map on different scales (country, city, street...) ;
-    - to see the changes happening live, so popping first and disappearing then on the map ;
-    - to be able read the stream"s history and the evolution in the time.
+- to be simple to use;
+- to select a topic you are interested in (concerts, friends, protests...);
+- to see the tweets appearing directly on a map on different scales (country, city, street...) ;
+- to see the changes happening live, so popping first and disappearing then on the map ;
+- to be able read the stream"s history and the evolution in the time.
 
 Pop'Tweets is designed for :
-    - Anyone curious about maps and informations;
-    - Social scientists who would like to analyze Twitter evolution;
-    - Activists who would like to make surveys of specific events;
+- Anyone curious about maps and informations;
+- Social scientists who would like to analyze Twitter evolution;
+- Activists who would like to make surveys of specific events;
 
 
 Current problems to solve (on 06/06/2014):
