@@ -2,7 +2,7 @@ Developping Pop'Tweets :
 =====
 
 Those files are samples of what constitutes the architecture of Pop'Tweets web app.
-check : http://pop-tweets.com
+check : http://pop-tweets.com 
 
 I'm a newby, any help is welcome !
 
