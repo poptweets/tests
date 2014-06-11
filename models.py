@@ -12,18 +12,18 @@ class GeoJson(Document):
     Date_created = DateTimeField(default=datetime.datetime.now)
     Location = PointField(auto_index=False) # as a list of 2 float numbers [ 10.000 , 240.000 ]
     username_ = CharField()
-    userID_ = CharField()
-    tweet_ = CharField()
-    replyto_ = CharField()
-    hashtags_ = CharField() # list
-    language_ = CharField()
-    place_ = CharField()
-    country_ = CharField()
+    userID = CharField()
+    tweet = CharField()
+    replyto = CharField()
+    hashtags = CharField() # list
+    language = CharField()
+    place = CharField()
+    country = CharField()
     
-    nb_cycles_ = DecimalField()
-    radius_ = DecimalField()
-    opacity_ = DecimalField()
-    color_ = CharField()
+    nb_cycles = DecimalField()
+    radius = DecimalField()
+    opacity = DecimalField()
+    color = CharField()
 
     meta = {'db_alias': 'mongodb_jsons', # save in DB ‘mongodb_jsons’
             'indexes': [                 # the geojson structure
@@ -33,21 +33,19 @@ class GeoJson(Document):
                         'coordinates' : ('Location', '2dsphere')
                         }, 
                    'properties':{
-                        'content1' : 'Content1',
-                        'content2' : 'Content2',    
                         'date_creation' : 'Date_created',
                         'username_' = 'username_',
                         'userID_' = 'userID_',
-                        'tweet_' = 'tweet_',
-                        'replyto_' = 'replyto_',
-                        'hashtags_' = 'hashtags_',
-                        'language_' = 'language_',
-                        'place_' = 'place_',
-                        'country_' = 'country_',
-                        'nb_cycles_': 'nb_cycles_',
-                        'radius_': 'radius_',
-                        'opacity_': 'opacity_',
-                        'color_': 'color_'                   
+                        'tweet' = 'tweet_',
+                        'replyto' = 'replyto_',
+                        'hashtags' = 'hashtags_',
+                        'language' = 'language_',
+                        'place' = 'place_',
+                        'country' = 'country_',
+                        'nb_cycles': 'nb_cycles_',
+                        'radius': 'radius_',
+                        'opacity': 'opacity_',
+                        'color': 'color_'                   
                         }
                     }
                 }]
