@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from mongoengine import *
-connect(‘mongodb_jsons’)
+connect('mongodb_jsons')
 
 import datetime
 
