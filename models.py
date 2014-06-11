@@ -35,19 +35,19 @@ class GeoJson(Document):
                    'properties':{
                         'content1' : 'Content1',
                         'content2' : 'Content2',    
-                        'date_creation' : 'Date_created'
-                        'username_' = 'username_'
-                        'userID_' = 'userID_'
-                        'tweet_' = 'tweet_'
-                        'replyto_' = 'replyto_'
-                        'hashtags_' = 'hashtags_'
-                        'language_' = 'language_'
-                        'place_' = 'place_'
-                        'country_' = 'country_'
-                        "nb_cycles_": 0,
-                        "radius_": self.radius_max_dots_,
-                        "opacity_": self.opacity_max_dots_,
-                        "color_": self.color_dots_,                     
+                        'date_creation' : 'Date_created',
+                        'username_' = 'username_',
+                        'userID_' = 'userID_',
+                        'tweet_' = 'tweet_',
+                        'replyto_' = 'replyto_',
+                        'hashtags_' = 'hashtags_',
+                        'language_' = 'language_',
+                        'place_' = 'place_',
+                        'country_' = 'country_',
+                        'nb_cycles_': 'nb_cycles_',
+                        'radius_': 'radius_',
+                        'opacity_': 'opacity_',
+                        'color_': 'color_'                   
                         }
                     }
                 }]
