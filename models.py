@@ -1,63 +1,61 @@
-from django.db import models
+# -*- coding: utf-8 -*-
 
 from mongoengine import *
-connect ('poptweets')
+connect(‘mongodb_jsons’)
 
-# Create your models here.
+import datetime
 
-'''
-var Tweets_json = {"type": "FeatureCollection",
-                    "features":
-                    [
-                        {"geometry":
-                            {"type": "Point", ...
-'''
-'''
-    Tweet_geojson = {
-        "type": "Feature",
-        "properties": {
-            "time_": time_,
-            
-            "username_": username_,
-            "userID_": userID_,
-            "tweet_": tweet_,
-            "replyto_": replyto_,
-            "hashtags_": hashtags_,
-            "language_": language_,
-            "place_": place_,
-            "country_": country_,
-            "username_": json_unicode(username_),
-            "tweet_": json_unicode(tweet_),
-            "replyto_": json_unicode(replyto_),
-            "hashtags_": json_unicode(hashtags_),
-            "language_": json_unicode(language_),
-            "place_": json_unicode(place_),
-            "country_": json_unicode(country_),
-            
-            "nb_cycles_": 0,
-            "radius_": self.radius_max_dots_,
-            "opacity_": self.opacity_max_dots_,
-            "color_": self.color_dots_,
-            },
-        "geometry": {
-            "type": "Point",
-            "coordinates": # tweets coordinates long and lat are inverted
-                [geo_[1], # lat
-                 geo_[0]] # long
+class GeoJson(Document):
+ # from a geojson object
+ # save it in Mongodb with a geojson structure
+
+    Date_created = DateTimeField(default=datetime.datetime.now)
+    Location = PointField(auto_index=False) # as a list of 2 float numbers [ 10.000 , 240.000 ]
+    username_ = CharField()
+    userID_ = CharField()
+    tweet_ = CharField()
+    replyto_ = CharField()
+    hashtags_ = CharField() # list
+    language_ = CharField()
+    place_ = CharField()
+    country_ = CharField()
+    
+    nb_cycles_ = DecimalField()
+    radius_ = DecimalField()
+    opacity_ = DecimalField()
+    color_ = CharField()
+
+    meta = {'db_alias': 'mongodb_jsons', # save in DB ‘mongodb_jsons’
+            'indexes': [                 # the geojson structure
+                {'type' : 'Feature', {
+                   'geometry':{
+                        'type' : 'Point',
+                        'coordinates' : ('Location', '2dsphere')
+                        }, 
+                   'properties':{
+                        'content1' : 'Content1',
+                        'content2' : 'Content2',    
+                        'date_creation' : 'Date_created'
+                        'username_' = 'username_'
+                        'userID_' = 'userID_'
+                        'tweet_' = 'tweet_'
+                        'replyto_' = 'replyto_'
+                        'hashtags_' = 'hashtags_'
+                        'language_' = 'language_'
+                        'place_' = 'place_'
+                        'country_' = 'country_'
+                        "nb_cycles_": 0,
+                        "radius_": self.radius_max_dots_,
+                        "opacity_": self.opacity_max_dots_,
+                        "color_": self.color_dots_,                     
+                        }
+                    }
+                }]
             }
-        }
-'''
 
 '''
-class Poll(Document):
-    question = StringField(max_length=200)
-    pub_date = DateTimeField(help_text='date published')
-    choices = ListField(EmbeddedDocumentField(Choice))
-
-    meta = {
-        'indexes': [
-            'question', 
-            ('pub_date', '+question')
-        ]
-    }
-''' 
+"nb_cycles_": 0,
+"radius_": self.radius_max_dots_,
+"opacity_": self.opacity_max_dots_,
+"color_": self.color_dots_,   
+'''
